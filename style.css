@@ -1,0 +1,340 @@
+*{
+    margin : 0 ;
+    padding : 0 ;
+}
+body{
+    display: flex ;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+menu{
+    width : 270px ;
+    height : 100vh ; 
+    background-color: #c9c6c6 ;
+    padding : 10px ;
+    position: fixed ;
+    overflow-y: auto;
+    transition: 1s;
+    z-index: 50;
+}
+menu .closeMenu{
+    position: absolute;
+    top: 50% ;
+    height: 50px;
+    width: 10px;
+    right: -12px;
+    padding : 0 5px 0 3px ;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    cursor : pointer ;
+    transform: translateX(-50%);
+    display: flex ;
+    align-items: center;
+
+}
+.showMenu{
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: none;
+}
+menu .input{
+    height: 40px ;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    position: relative;
+    margin :10px 10px 50px ;
+}
+menu .input i , menu .input input , menu .input button{
+    max-height: 100% ;
+    background-color: white;
+    border : none ;
+}
+menu .input i{
+    margin: 3px ;
+    font-size: 20px;
+    color : rgb(44, 43, 43) ;
+}
+menu .input button{
+    position: absolute;
+    right : 0;
+    padding: 5px ;
+    border: 1px black solid;
+    background-color: black ;
+    cursor: pointer;
+    color: white;
+    height : 100% ;
+}
+menu .input button:hover{
+    background-color: rgb(114, 111, 111);
+}
+menu .input input{
+    outline: none ;
+    font-size: 18px;
+    color : rgba(0, 0, 0, 0.733) ;
+}
+menu .tasksFields ul , menu .notes .content ul{ 
+    list-style-type: none ;
+    list-style-position: inside;
+    margin-bottom : 20px ;
+    
+}
+menu .tasksFields ul .currentField{
+    background-color:white ;
+}
+menu .tasksFields ul .currentField:hover{
+    background-color: white;
+}
+menu .tasksFields ul li , menu .notes .content ul li{
+    display : flex ;
+    background-color: #f7f4f49a ;
+    justify-content: space-between;
+    align-items: center;
+    margin : 10px ;
+    padding : 10px ;
+    border-radius : 10px ;
+    color : #2e2e2ec0 ;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+}
+menu .tasksFields ul li:hover, menu .notes .content ul li:hover {
+    background-color: #ffffffbb;
+}
+menu .tasksFields ul li:hover .dltFieldBtn{
+    display: block;
+}
+menu .tasksFields ul li .dltFieldBtn{
+    background-color : rgba(0, 0, 0, 0.849);
+    border: none ;
+    border-radius : 10px ;
+    padding :2px 4px ;
+    color :white ;
+    cursor : pointer ;
+    display: none ;
+    transition-duration : 0.5s ;
+}
+menu .tasksFields ul li .dltFieldBtn:hover{
+    transform : scaleX(1.1) ;
+}
+
+main{
+    margin-left: 310px;
+    width : calc(100% - 300px) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .zoon{
+    width: 70%;
+    margin-top: 30px;
+    background-color: #c9c6c6a4;
+    padding : 40px ;
+    border-radius: 10px;
+}
+main .zoon .addbtn{
+    padding : 10px ;   
+}
+main .zoon .newtask{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    
+}
+main .zoon .newtask .input{
+    width: 80%;
+    display: flex ;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px 0 ;
+    padding : 10px 0 ;
+    background-color: rgb(255, 255, 255 , 0.5);
+    display: none ;
+    border-radius: 10px;
+}
+main .zoon .newtask .input input , main .zoon .newtask .input textarea{
+    width: 60%;
+    height: 40px;
+    border: none;
+    outline: none;
+    margin : 10px 0 ;
+    padding:0 5px ;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #000000dc;
+}
+main .zoon .newtask .input textarea{
+    width: 70%;
+    resize: none;
+    height: 80px;
+}
+.head {
+    display: flex ;
+    justify-content: flex-start;
+    gap : 20px ;
+    font-size: 20px ;
+    margin: 10px 0 0 10px ;
+}
+main .zoon .task{
+    width : 95% ;
+    display: flex;
+    height: auto;
+    margin: 20px 10px 0;
+    align-items: center;
+    gap: 30px;
+}
+main .zoon .task .content{
+    background-color: #f7f4f49a ;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap : 10px ;
+    padding: 10px 20px;
+    /* border-bottom-right-radius: 30px; */
+    transition-duration: 1s;
+    border-radius: 5px;
+    position: relative;
+}
+main .zoon .task .done{
+    background-color: #76ece6e0;
+}
+
+main .zoon .task .content h3{
+    padding:2px 5px;
+    font-size: 22px;
+    max-height: 25px;
+    max-width: 90%;
+    overflow : hidden ;
+    letter-spacing: 1px;
+    color : rgba(0, 0, 0, 0.8) ;
+}
+main .zoon .task .content .head{
+    display : flex ;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+main .zoon .task .content .head i{
+    font-size: 25px;
+    color : rgb(0, 0, 0,0.8) ;
+    transition-duration: 1s;
+}
+main .zoon .task .content .head i:hover{
+    transform: scaleX(1.1);
+}
+main .zoon .task .content h3::before{
+    content: ">> ";
+
+}
+main .zoon .task .content .head .options{
+    display: flex;
+    flex-direction: column;
+    position : absolute ;
+    right: 15px;
+    top: 20px;
+    padding:2px 1px;
+    background-color: black ;
+    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.651);
+    border-radius:3px 0 3px 3px;
+    display: none;
+}
+main .zoon .task .content .head .options button , menu .tasksFields ul .options button{
+    width : 120px ;
+    height: 40px ;
+    margin :2px 0px ;
+    text-transform: uppercase;
+    border: none;
+    cursor : pointer ;
+    background-color: white;
+    border-radius: 3px;
+    font-size: 17px;
+
+}
+main .zoon .task .content .head .options button:hover , menu .tasksFields ul .options button:hover{
+    background-color: rgba(187, 182, 182, 0.7);
+}
+main .zoon .task input{
+    width: 20px;
+    height: 20px;
+}
+
+main .zoon .message{
+    margin : 40px 0 0 0 ;
+    font-size: 20px;
+    text-align: center;
+}
+main .zoon .task .content .description{
+    color : #2e2e2ede ;
+    max-width: 95%;
+    height: 20px;
+    font-size: 18px;
+    /* text-wrap :nowrap ;
+    text-overflow: ellipsis; */
+    overflow: hidden;
+    transition-duration: 1s;
+}
+
+main .zoon .tasksArea .task .content .showTask ,
+main .zoon .tasksArea .task .content .closeTask{
+    position: absolute;
+    bottom: -5px ;
+    height: 16px;
+    left: 50%;
+    font-size: 20px;
+    padding:0 10px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    cursor : pointer ;
+    transform: translateX(-50%);
+}
+main .zoon .task .content .head .showoptions{
+    display: flex;
+    flex-direction : column ;
+    z-index: 3;
+}
+
+main .footer{
+    position : fixed ;
+    font-size : 20px ;
+    bottom : 0 ;
+    width: 100%;
+    text-align: center;
+}
+main .footer{
+    background-color: white;
+    width: 60%;
+}
+
+@media (max-width : 900px) {
+    menu{
+        display: none;
+    }
+    .showMenu{
+        display: block;
+    }
+    main{
+        margin: 0 ;
+        width: 100vw;
+    }
+    main .zoon{
+        width : 100% ;
+    }
+    main .zoon .tasksArea{
+        width: 100vw;
+        margin : 20px 0 0 ;
+    }
+    main .footer{
+        width: 100%;
+    }
+
+}
